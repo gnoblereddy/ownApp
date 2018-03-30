@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: './App.js',
+    entry: './main.js',
     output: {
         path: '/',
         filename: 'index.js',
