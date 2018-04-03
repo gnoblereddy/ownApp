@@ -1,11 +1,20 @@
 import React from 'react';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import SignUpContainer from './src/signUp/container';
+// import { store } from './store';
+import { Provider } from 'react-redux' ;
 
-export default  class App extends React.Component {
-    render() {
-        return (
-            <div>
-                Hello World!!!
-            </div>
-        );
-    }
+
+const AppRoutes = () => {
+    return(
+        // <Provider store={store}>
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path='/' component={SignUpContainer} />
+                </Switch>
+            </BrowserRouter>
+        // </Provider>
+    )    
 }
+
+export default AppRoutes
