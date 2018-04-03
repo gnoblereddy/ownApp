@@ -28,15 +28,13 @@ export function signUpAction(registerData) {
     dispatch(setSignUpPending(true));
     dispatch(setSignUpSuccessData(null));
     dispatch(setSignUpErrorData(null));
-    console.log("1");
     callSignUpApi(registerData, response => {
-      console.log("2");
       dispatch(setSignUpPending(false));
       if (response.status) {
         // console.log("response.result.data ", response.result.data);
         dispatch(setSignUpSuccessData(response.result.data));
       } else {
-        dispatch(setSignUpErrorData(response.result.message));
+        // dispatch(setSignUpErrorData(response.result.message));
       }
     });
   }

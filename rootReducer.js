@@ -1,4 +1,4 @@
-import  signUpReducer from './src/signUp/reducer';
+import  signUpReducer from './client/src/signUp/reducer';
 
 // console.log(signUpReducer);
 

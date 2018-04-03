@@ -36,55 +36,5 @@ router.post('/signup', function(req, res) {
     })
 })
 
-// router.delete('/deleteProduct/:id', function(req, res) {
-//     db.remove({_id : req.params.id}, function(err, deleted) {
-//         if(err) {
-//             res.json({
-//                 error : err.message || 'failed to delete product'
-//             })
-//         } else  {
-//             db.find({},function(err, data) {
-//                 if(err) {
-//                     res.json({
-//                         error : err.message || 'failed to create product'
-//                     })
-//                 } else  {
-//                     res.status(200).json(data)
-//                 }  
-//             })
-//         }   
-//     })
-// });
-
-// router.put('/updateProduct/:id', function(req, res) {
-//     db.update(
-//         {"_id" : req.params.id},
-//         {$set:
-//             {
-//                 title : req.body.title,
-//                 price : req.body.price,
-//                 quantity : req.body.quantity,
-//                 description : req.body.description,
-//                 url : req.body.url
-//             }
-//         }, function(err, modifiedData) {
-//             if(err) {
-//                 res.json({
-//                     error : err.message || 'failed to update product'
-//                 })
-//             } else  {
-//                 Products.find({},function(err, data) {
-//                     if(err) {
-//                         res.json({
-//                             error : err.message || 'failed to  product'
-//                         })
-//                     } else  {
-//                         res.status(200).json(data)
-//                     }  
-//                 })
-//             }   
-//         }
-//     )
-// })
 
 module.exports = router;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
-import SignUpContainer from './src/signUp/container';
+import SignUpContainer from './client/src/signUp/container';
 import { store } from './store';
 import { Provider } from 'react-redux';
 
