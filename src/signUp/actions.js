@@ -23,13 +23,14 @@ function setSignUpErrorData(errorData) {
   }
 }
 
-export function signUpAction(registerPatientData) {
+export function signUpAction(registerData) {
   return dispatch => {
     dispatch(setSignUpPending(true));
     dispatch(setSignUpSuccessData(null));
     dispatch(setSignUpErrorData(null));
-
-    callSignUpApi(registerPatientData, response => {
+    console.log("1");
+    callSignUpApi(registerData, response => {
+      console.log("2");
       dispatch(setSignUpPending(false));
       if (response.status) {
         // console.log("response.result.data ", response.result.data);
