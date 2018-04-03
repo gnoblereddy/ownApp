@@ -1,8 +1,10 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
-import SignUpContainer from './client/src/signUp/container';
 import { store } from './store';
 import { Provider } from 'react-redux';
+
+import SignUpContainer from './client/src/signUp/container';
+import LoginContainer from './client/src/login/container';
 
 
 const AppRoutes = () => {
@@ -10,7 +12,8 @@ const AppRoutes = () => {
         <Provider store={store}>
             <BrowserRouter>
                 <Switch>
-                    <Route exact path='/' component={SignUpContainer} />
+                    <Route exact path='/signUp' component={SignUpContainer} />
+                    <Route exact path='/' component={LoginContainer} />
                 </Switch>
             </BrowserRouter>
         </Provider>

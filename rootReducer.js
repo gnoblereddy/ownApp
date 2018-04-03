@@ -1,9 +1,12 @@
 import  signUpReducer from './client/src/signUp/reducer';
+import loginReducer from './client/src/login/reducer';
+
 
 // console.log(signUpReducer);
 
 var rootReducer = {
-    'registrationData':signUpReducer
+    'registrationData':signUpReducer,
+    'login':loginReducer
 }
 
 
