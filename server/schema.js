@@ -6,7 +6,7 @@ var signUpSchema = new Schema({
     mobileNumber : String,
     email : String,
     password : String,
-    confirmPassword : String
+    confirmPassword : String,
 })
 
 module.exports = mongoose.model('ReactApp', signUpSchema)

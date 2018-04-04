@@ -15,6 +15,7 @@ export default function signUpReducer(state = initialState, action) {
       });
 
     case SIGNUP_SUCCESS:
+      // console.log("reducer signup success",action.successData)
       return Object.assign({}, state, {
         onSuccess: action.successData
       });

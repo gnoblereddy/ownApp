@@ -30,9 +30,10 @@ export function signUpAction(registerData) {
     dispatch(setSignUpErrorData(null));
     callSignUpApi(registerData, response => {
       dispatch(setSignUpPending(false));
+      // console.log("response.status",response.status)
       if (response.status) {
-        // console.log("response.result.data ", response.result.data);
-        dispatch(setSignUpSuccessData(response.result.data));
+        // console.log("response.result.data ", response.result);
+        dispatch(setSignUpSuccessData(response.result));
       } else {
         // dispatch(setSignUpErrorData(response.result.message));
       }

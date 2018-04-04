@@ -9,13 +9,30 @@ class SignUpFormContainer extends React.Component {
         this.submitRegistration = this.submitRegistration.bind(this);
     }
 
+    componentWillReceiveProps(nextprops) {
+        // console.log("componentWillReceiveProps",nextprops);
+        if (nextprops.onSuccess && nextprops.onSuccess != null) {
+          this.props.history.push('/');
+        }
+        if(nextprops.onError){
+            this.props.history.push('/signUp');
+        }
+      }
+
     submitRegistration(formObject) {
         formObject['userName'] = formObject['email'];
-        console.log(" formObject ", formObject);
+        // console.log(" formObject ", formObject);
         this.props.signUpAction(formObject);
     }
 
     render() {
+
+        let messages = {
+            isLoading: this.props.isLoading,
+            onSuccess: this.props.onSuccess,
+            onError: this.props.onError
+          };
+
         return (
             <div>
                 <SignUpForm submitRegistration={this.submitRegistration} />
@@ -39,7 +56,7 @@ const mapStateToProps = function (state) {
   
   /**
    * Map the actions to props.
-   */
+   */   
   const mapDispatchToProps = (dispatch) => {
     return {
         signUpAction: (registrationFormData) => dispatch(signUpAction(registrationFormData))

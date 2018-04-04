@@ -5,4 +5,6 @@ import rootReducer from './rootReducer';
 
 const appReducer = combineReducers(rootReducer);
 
-export const store = createStore(appReducer, applyMiddleware(thunk));
+const store = createStore(appReducer, applyMiddleware(thunk));
+window.store = store;
+export default store;
