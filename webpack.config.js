@@ -1,7 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 
-module.exports = {
+var config  = {
     entry: './main.js',
     output: {
         path : path.resolve(__dirname, 'dist'),
@@ -30,3 +30,5 @@ module.exports = {
         ]
     }
 }
+
+module.exports = config;
