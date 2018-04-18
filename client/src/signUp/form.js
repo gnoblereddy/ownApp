@@ -43,7 +43,7 @@ export default class SignUpForm extends React.Component {
 
     submitRegistration(e) {
         e.preventDefault();
-        console.log("SignupDetails", this.state);
+        // console.log("SignupDetails", this.state);
         this.props.submitRegistration(this.state);
     }
 

@@ -27,7 +27,7 @@ export default class LoginForm extends Component {
 
     submitLoginForm(e) {
         e.preventDefault();
-        console.log("submitloginform",this.state);
+        // console.log("submitloginform",this.state);
         this.props.submitLoginForm(this.state);
     }
 

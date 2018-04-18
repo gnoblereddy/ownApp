@@ -32,11 +32,11 @@ export function loginUserAction(loginData) {
 
     callLoginApi(loginData, response => {
       if (response.status) {
-        localStorage.setItem('userAuthToken', response.result.data.userAuthToken);
-        dispatch(setLoginSuccess(response.result.data));
+        // localStorage.setItem('userAuthToken', response.result.data.userAuthToken);
+        dispatch(setLoginSuccess(response.result));
         dispatch(setLoginErrorData(null));
       } else {
-        dispatch(setLoginErrorData(response.result.message));
+        // dispatch(setLoginErrorData(response.result.message));
       }
     });
   }

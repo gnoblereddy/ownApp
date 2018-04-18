@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var signUpSchema = new Schema({
+var userSchema = new Schema({
     name : String,
     mobileNumber : String,
     email : String,
@@ -9,4 +9,5 @@ var signUpSchema = new Schema({
     confirmPassword : String,
 })
 
-module.exports = mongoose.model('ReactApp', signUpSchema)
+
+module.exports = mongoose.model('userSchema', userSchema)
