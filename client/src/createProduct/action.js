@@ -23,7 +23,7 @@ function setCreateProductErrorData(errorData) {
     };
 }
 
-export function createProductUserAction(createProductData) {
+export function createProductAction(createProductData) {
     return dispatch => {
         dispatch(setCreateProductPending(true));
         dispatch(setCreateProductSuccess(null));

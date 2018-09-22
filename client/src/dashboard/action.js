@@ -24,7 +24,7 @@ function setDashboardErrorData(errorData) {
 }
 
 
-export function dashboardUserAction(dashboardData) {
+export function dashboardAction(dashboardData) {
   return dispatch => {
     dispatch(setDashboardPending(true));
     dispatch(setDashboardSuccess(null));

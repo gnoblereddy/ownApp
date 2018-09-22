@@ -1,16 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import CreateProductForm from './form';
+import { createProductAction } from './action';
 
 class CreateProductContainer extends React.Component {
     constructor(props) {
         super(props);
+        this.saveCreateForm = this.saveCreateForm.bind(this);
+    }
+
+    saveCreateForm(createProductDetails) {
+        console.log('createproductdetails----', createProductDetails);
+        this.props.createProductAction(createProductDetails);
     }
 
     render() {
         return (
             <div>
-                <CreateProductForm />
+                <CreateProductForm saveCreateForm={this.saveCreateForm} />
             </div>
         )
     }
@@ -20,7 +27,7 @@ class CreateProductContainer extends React.Component {
  * Map the state to props.
  */
 const mapStateToProps = function (state) {
-    console.log("createProduct==", state);
+    // console.log("createProduct==", state);
     return {
         isLoading: state.createProduct.isLoading,
         onSuccess: state.createProduct.onSuccess,
@@ -34,7 +41,7 @@ const mapStateToProps = function (state) {
  */
 const mapDispatchToProps = (dispatch) => {
     return {
-        // dashboardUserAction: (dashboardRequestData) => dispatch(dashboardUserAction(dashboardRequestData))
+        createProductAction: (createProductFormData) => dispatch(createProductAction(createProductFormData))
     };
 }
 

@@ -12,12 +12,12 @@ class SignUpFormContainer extends React.Component {
     componentWillReceiveProps(nextprops) {
         // console.log("componentWillReceiveProps",nextprops);
         if (nextprops.onSuccess && nextprops.onSuccess != null) {
-          this.props.history.push('/');
+            this.props.history.push('/');
         }
-        if(nextprops.onError){
+        if (nextprops.onError) {
             this.props.history.push('/signUp');
         }
-      }
+    }
 
     submitRegistration(formObject) {
         formObject['userName'] = formObject['email'];
@@ -31,7 +31,7 @@ class SignUpFormContainer extends React.Component {
             isLoading: this.props.isLoading,
             onSuccess: this.props.onSuccess,
             onError: this.props.onError
-          };
+        };
 
         return (
             <div>
@@ -47,21 +47,21 @@ class SignUpFormContainer extends React.Component {
  */
 const mapStateToProps = function (state) {
     return {
-      isLoading: state.registrationData.isLoading,
-      onSuccess: state.registrationData.onSuccess,
-      onError: state.registrationData.onError
+        isLoading: state.registrationData.isLoading,
+        onSuccess: state.registrationData.onSuccess,
+        onError: state.registrationData.onError
     }
-  }
-  
-  
-  /**
-   * Map the actions to props.
-   */   
-  const mapDispatchToProps = (dispatch) => {
+}
+
+
+/**
+ * Map the actions to props.
+ */
+const mapDispatchToProps = (dispatch) => {
     return {
         signUpAction: (registrationFormData) => dispatch(signUpAction(registrationFormData))
     };
-  }
+}
 
 
-  export default connect(mapStateToProps, mapDispatchToProps)(SignUpFormContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUpFormContainer);
