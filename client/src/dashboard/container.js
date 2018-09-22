@@ -8,9 +8,10 @@ class DashboardContainer extends React.Component {
     }
 
     render() {
+        console.log('props----',this.props.reg );
         return (
             <div>
-                <DashboardForm />
+                <DashboardForm loginData={this.props.reg.name}/>
             </div>
         )
     }
@@ -24,7 +25,8 @@ const mapStateToProps = function (state) {
     return {
         isLoading: state.dashboard.isLoading,
         onSuccess: state.dashboard.onSuccess,
-        onError: state.dashboard.onError
+        onError: state.dashboard.onError,
+        reg:state.login.onSuccess
     }
 }
 

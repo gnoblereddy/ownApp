@@ -8,7 +8,8 @@ export default class DashboardForm extends React.Component {
     render() {
         return (
             <div>
-                Welcome to Dashboard
+                <h1>Dashboard</h1>
+                <h4>User Name : {this.props.loginData.toUpperCase()}</h4>
             </div>
         )
     }
