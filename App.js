@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import SignUpContainer from './client/src/signUp/container';
 import LoginContainer from './client/src/login/container';
 import DashboardContainer from './client/src/dashboard/container';
+import CreateProductContainer from './client/src/createProduct/container';
 
 
 const AppRoutes = () => {
@@ -16,6 +17,7 @@ const AppRoutes = () => {
                     <Route exact path='/signUp' component={SignUpContainer} />
                     <Route exact path='/' component={LoginContainer} />
                     <Route exact path='/dashboard' component={DashboardContainer} />
+                    <Route exact path='/create-product' component={CreateProductContainer} />
                 </Switch>
             </BrowserRouter>
         </Provider>

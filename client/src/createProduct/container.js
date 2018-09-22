@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import DashboardForm from './form';
+import CreateProductForm from './form';
 
-class DashboardContainer extends React.Component {
+class CreateProductContainer extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -10,7 +10,7 @@ class DashboardContainer extends React.Component {
     render() {
         return (
             <div>
-                <DashboardForm loginData={this.props.reg.name}/>
+                <CreateProductForm />
             </div>
         )
     }
@@ -20,12 +20,11 @@ class DashboardContainer extends React.Component {
  * Map the state to props.
  */
 const mapStateToProps = function (state) {
-    console.log("dashboard==",state);
+    console.log("createProduct==", state);
     return {
-        isLoading: state.dashboard.isLoading,
-        onSuccess: state.dashboard.onSuccess,
-        onError: state.dashboard.onError,
-        reg:state.login.onSuccess
+        isLoading: state.createProduct.isLoading,
+        onSuccess: state.createProduct.onSuccess,
+        onError: state.createProduct.onError
     }
 }
 
@@ -39,4 +38,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DashboardContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateProductContainer);
