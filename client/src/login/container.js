@@ -8,16 +8,16 @@ class LoginContainer extends Component {
         super();
         this.submitLoginForm = this.submitLoginForm.bind(this);
     }
-    
+
     componentWillReceiveProps(nextprops) {
-        // console.log("componentWillReceiveProps",nextprops);
+        // console.log("componentWillReceiveProps", nextprops);
         if (nextprops.onSuccess && nextprops.onSuccess != null) {
-          this.props.history.push('/dashboard');
+            this.props.history.push('/dashboard');
         }
         // if(nextprops.onError){
         //     this.props.history.push('p');
         // }
-      }
+    }
 
 
     submitLoginForm(loginRequestData) {

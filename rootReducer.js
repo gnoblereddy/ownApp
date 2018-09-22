@@ -3,10 +3,6 @@ import loginReducer from './client/src/login/reducer';
 import dashboardReducer from './client/src/dashboard/reducer';
 import createProductReducer from './client/src/createProduct/reducer';
 
-
-
-// console.log(signUpReducer);
-
 var rootReducer = {
     'registrationData': signUpReducer,
     'login': loginReducer,

@@ -9,6 +9,12 @@ class CreateProductContainer extends React.Component {
         this.saveCreateForm = this.saveCreateForm.bind(this);
     }
 
+    componentWillReceiveProps(nextprops) {
+        if (nextprops.onSuccess && nextprops.onSuccess != null) {
+            this.props.history.push('/dashboard');
+        }
+    }
+
     saveCreateForm(createProductDetails) {
         console.log('createproductdetails----', createProductDetails);
         this.props.createProductAction(createProductDetails);

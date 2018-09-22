@@ -15,7 +15,7 @@ export default function createProductReducer(state = initalState, action) {
 
         case SET_CREATE_PRODUCT_SUCCESS:
             return Object.assign({}, state, {
-                onSuccess: action.onSuccess
+                onSuccess: action.successData
             });
 
         case SET_CREATE_PRODUCT_ERROR:
